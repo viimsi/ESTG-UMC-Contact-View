@@ -25,8 +25,12 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -161,22 +165,138 @@ fun ContactScreen () {
                                 )
                             }
                         }
-                        Row {
-                            //phone but no phone icon
-
+                    }
+                    Box {
+                        Row(
+                            modifier = Modifier
+                                .padding(top = 20.dp)
+                        ) {
+                            //without phone icon
+                            Box(
+                                modifier = Modifier
+                                    .size(60.dp)
+                            ) {}
+                            Column(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .align(Alignment.CenterVertically)
+                            )
+                            {
+                                Text( //phone number
+                                    text = "(323) 987-6543",
+                                    color = Color.Black,
+                                    fontSize = 20.sp,
+                                    modifier = Modifier
+                                )
+                                Text( //type of phone
+                                    text = "Work",
+                                    color = Color.Gray,
+                                    fontSize = 12.sp,
+                                    modifier = Modifier
+                                )
+                            }
+                            Box(
+                                modifier = Modifier
+                                    .size(60.dp)
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.message),
+                                    contentDescription = "message icon",
+                                    contentScale = ContentScale.Fit,
+                                    modifier = Modifier
+                                        .size(24.dp)
+                                        .align(Alignment.Center)
+                                )
+                            }
+                        }
+                    }
+                    Spacer(
+                        modifier = Modifier
+                            .height(8.dp)
+                    )
+                    HorizontalDivider(
+                        color = Color.Gray,
+                        thickness = 1.dp,
+                        modifier = Modifier
+                            .padding(start = 60.dp)
+                    )
+                    Box {
+                        Row(
+                            modifier = Modifier
+                                .padding(top = 20.dp)
+                        ) {
+                            //with email icon
+                            Box(
+                                modifier = Modifier
+                                    .size(60.dp)
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.email),
+                                    contentDescription = "phone icon",
+                                    contentScale = ContentScale.Fit,
+                                    modifier = Modifier
+                                        .size(20.dp)
+                                        .align(Alignment.CenterStart)
+                                )
+                            }
+                            Column(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .align(Alignment.CenterVertically)
+                            )
+                            {
+                                Text( //phone number
+                                    text = "miau@gmail.com",
+                                    color = Color.Black,
+                                    fontSize = 20.sp,
+                                    modifier = Modifier
+                                )
+                                Text( //type of phone
+                                    text = "Personal",
+                                    color = Color.Gray,
+                                    fontSize = 12.sp,
+                                    modifier = Modifier
+                                )
+                            }
+                            Box(
+                                modifier = Modifier
+                                    .size(60.dp)
+                            ) {}
                         }
                     }
                     Box {
-                        Row {
-                            Image(
-                                painter = painterResource(id = R.drawable.email),
-                                contentDescription = "phone icon",
-                                contentScale = ContentScale.Crop,
-                                modifier = Modifier.size(20.dp)
+                        Row(
+                            modifier = Modifier
+                                .padding(top = 20.dp)
+                        ) {
+                            //without email icon
+                            Box(
+                                modifier = Modifier
+                                    .size(60.dp)
+                            ) {}
+                            Column(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .align(Alignment.CenterVertically)
                             )
-                        }
-                        Row {
-                            //email but no icon
+                            {
+                                Text( //phone number
+                                    text = "meow@estg.ipp.pt",
+                                    color = Color.Black,
+                                    fontSize = 20.sp,
+                                    modifier = Modifier
+                                )
+                                Text( //type of phone
+                                    text = "Work",
+                                    color = Color.Gray,
+                                    fontSize = 12.sp,
+                                    modifier = Modifier
+                                )
+                            }
+                            Box(
+                                modifier = Modifier
+                                    .size(60.dp)
+                            ) {}
                         }
                     }
                 }
